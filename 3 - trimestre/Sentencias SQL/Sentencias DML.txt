@@ -1,0 +1,41 @@
+Presentamos una de los joins usados en nuestro sistema de informacion:
+
+//==================================================================================
+Consultar la novedad de un aprendiz:
+//==================================================================================
+
+SELECT * FROM novedad LEFT JOIN aprendiz ON aprendiz.id_aprendiz=novedad.id_aprendiz
+                                                      LEFT JOIN tipo_novedad ON novedad.id_tipo_novedad=tipo_novedad.id_novedad 
+                                                      LEFT JOIN trimestre ON aprendiz.id_trimestre=trimestre.id_trimestre
+                                                      LEFT JOIN etapa ON aprendiz.id_etapa=etapa.id_etapa                                                      
+                                                      LEFT JOIN jornada ON aprendiz.id_jornada=jornada.id_jornada
+                                                      LEFT JOIN tipo_formacion ON aprendiz.id_tipo_formacion=tipo_formacion.id_tipo_formacion
+                                                      LEFT JOIN ficha ON aprendiz.id_ficha=ficha.id_ficha 
+                                                      LEFT JOIN programa_formacion ON ficha.id_programa=programa_formacion.id_programa
+                                                      WHERE aprendiz.documento=:documento
+
+//==================================================================================
+Consultar la informacion basica de un aprendiz:
+//==================================================================================
+
+SELECT * FROM aprendiz INNER JOIN ficha ON aprendiz.id_ficha=ficha.id_ficha
+                                                 INNER JOIN programa_formacion ON ficha.id_programa=programa_formacion.id_programa
+                                                 WHERE aprendiz.documento=:documento
+
+//==================================================================================
+Consultar la ficha y el programa de formacion correspondiente:
+//==================================================================================
+
+SELECT * FROM ficha INNER JOIN programa_formacion ON ficha.id_programa=programa_formacion.id_programa
+
+//==================================================================================
+Insertar una nueva ficha:
+//==================================================================================
+
+INSERT INTO ficha (id_ficha,numero_ficha,id_programa) VALUES (NULL, :numero_ficha, :programa)
+
+//==================================================================================
+Actualizar el rol de un usuario:
+//==================================================================================
+
+UPDATE usuario SET id_cargo=:cargo WHERE documento=:documento

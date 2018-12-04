@@ -1,0 +1,16 @@
+nav .logo{
+	padding: 0px;
+	float:left;
+}
+
+nav .logo img{
+	padding: 0px;
+	height: 50px;
+	transition: 5s;
+
+}
+
+nav.black .logo img{
+	padding: 0px;
+	height:50px;
+	}

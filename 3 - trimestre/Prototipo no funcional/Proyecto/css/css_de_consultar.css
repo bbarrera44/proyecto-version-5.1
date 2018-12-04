@@ -1,0 +1,219 @@
+body{
+	margin:0;
+	padding:0;
+	background-image:url(img/fondo.jpeg);
+	background-position:center;
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	-webkit-background-size:cover;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+
+.form-area{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	width:550px;
+	height:490px;
+	box-sizing:border-box;
+	background:rgba(0,0,0,0.5);
+	padding:40px;
+	border-radius:10px;
+	margin-bottom:30px;
+}
+
+h2{
+	margin:0;
+	padding:0 0 20px;
+	font-weight:bold;
+	color:#ffffff;
+	text-align:center;
+}
+
+h3,h5,h4{
+	margin:0;
+	padding:0 0 20px;
+	font-weight:bold;
+	color: #ffffff;
+	text-align:center;
+}
+
+.fin{
+	text-align:center;
+	color:#FFF;
+}
+
+.textarea{
+	resize:none;
+}
+
+.form-area p{
+	margin:0;
+	padding:0;
+	font-weight:bold;
+	color:#ffffff;
+}
+
+.form-area input,textarea,select{
+	margin-bottom:20px;
+	width:100%;
+}
+
+.form-area input[type=submit],
+.form-area input[type=reset]{
+	margin-bottom:20px;
+	width:32%;
+
+}
+
+.form-area input[type=text],
+.form-area textarea[name=solicitud]{
+	border:none;
+	border-bottom:1px solid #ffffff;
+	background-color:transparent;
+	outline:none;
+	height:40px;
+	color:#ffffff;
+	display:16px;
+	resize:none;
+	
+}
+::placeholder{
+	color:#ffffff;
+}
+
+.form-area select{
+	margin-top:20px;
+	padding:10px 0;
+}
+
+.form-area input[type=submit],
+.form-area input[type=reset]{
+	border:none;
+	height:40px;
+	outline:none;
+	color:#ffffff;
+	font-size:15px;
+	background-color:#06F;
+	cursor:pointer;
+	border-radius:20px;
+}
+
+.form-area input[type=submit]:hover{
+	color:#ffffff;
+}
+
+form-area a{
+	color:#ffffff;
+	text-decoration:none;
+	font-size:14px;
+}
+
+.login-box{
+    width: 950px;
+    height: 670px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding:10px 20px;
+	border-radius:25px;
+	
+}
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+	text-align:center;
+    font-size: 35px;
+}
+
+h2,h3{
+	text-align:center;
+	
+}
+/*dist userpass negrits*/
+.login-box p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+/*cuadrop tex ylogin*/
+.login-box input{
+    width: 30%;
+    margin-bottom: 20px;
+}
+/*transparencia de los cuadrops de texto y linea blanca, color de la letra, tamañoo */
+.login-box input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+	width:70%;
+}
+/*boton redondeado y el color */
+.submit,
+.login-box input[type="submit"],
+.login-box input[type="button"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #1c8adb;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+	cursor:pointer;
+}
+.login-box a:hover
+{
+    color: #39dc79;
+}
+
+div.footer{
+	width:100%;
+	height:100px;
+	background-color:#F00;
+}
+.nom{
+	width:300px;
+	background-color:rgba(0,0,0,0.5);
+	text-align:center;
+	border-radius:5px;
+	
+}
+
+.selec{
+	
+	width:90%;
+	padding:10px;
+	background:rgba(0,0,0,0.0);
+	border: 2px solid rgba(0,0,0,0.0);
+	margin-bottom:10px;
+	font-size:20px;
+	color:#FFF;
+}
+
+.sino{
+    width: 900px;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding:10px 20px;
+	border-radius:25px;
+	
+}

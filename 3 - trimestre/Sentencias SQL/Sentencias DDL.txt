@@ -1,0 +1,185 @@
+A continuacion se ven unas sentencias usadas en nuestro sistema de informacion:
+
+//======================================================================================
+Sentencias CREATE
+//======================================================================================
+
+DROP TABLE IF EXISTS `aprendiz`;
+CREATE TABLE IF NOT EXISTS `aprendiz` (
+  `id_aprendiz` int(10) NOT NULL AUTO_INCREMENT,
+  `primer_nombre_aprendiz` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `segundo_nombre_aprendiz` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `primer_apellido_aprendiz` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `segundo_apellido_aprendiz` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `id_tipo_documento` int(15) DEFAULT '1',
+  `documento` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `correo` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `tel_aprendiz` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `cel_aprendiz` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `id_ficha` int(20) DEFAULT NULL,
+  `id_resultado` int(11) DEFAULT NULL,
+  `id_genero` int(15) DEFAULT NULL,
+  PRIMARY KEY (`id_aprendiz`),
+  KEY `id_ficha` (`id_ficha`),
+  KEY `id_genero` (`id_genero`),
+  KEY `id_tipo_documento` (`id_tipo_documento`) USING BTREE,
+  KEY `id_resultado` (`id_resultado`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+DROP TABLE IF EXISTS `cargo`;
+CREATE TABLE IF NOT EXISTS `cargo` (
+  `id_cargo` int(15) NOT NULL AUTO_INCREMENT,
+  `cargo` char(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id_cargo`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+DROP TABLE IF EXISTS `etapa`;
+CREATE TABLE IF NOT EXISTS `etapa` (
+  `id_etapa` int(12) NOT NULL AUTO_INCREMENT,
+  `etapa` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id_etapa`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+DROP TABLE IF EXISTS `ficha`;
+CREATE TABLE IF NOT EXISTS `ficha` (
+  `id_ficha` int(20) NOT NULL AUTO_INCREMENT,
+  `numero_ficha` char(15) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `id_programa` int(10) DEFAULT NULL,
+  `id_jornada` int(15) DEFAULT '0',
+  `id_trimestre` int(15) DEFAULT '0',
+  `id_etapa` int(15) DEFAULT '0',
+  `id_tipo_formacion` int(15) DEFAULT '0',
+  PRIMARY KEY (`id_ficha`),
+  KEY `id_programa` (`id_programa`),
+  KEY `id_etapa` (`id_etapa`),
+  KEY `id_jornada` (`id_jornada`),
+  KEY `id_trimestre` (`id_trimestre`),
+  KEY `id_tipo_formacion` (`id_tipo_formacion`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+DROP TABLE IF EXISTS `genero`;
+CREATE TABLE IF NOT EXISTS `genero` (
+  `id_genero` int(10) NOT NULL AUTO_INCREMENT,
+  `genero` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id_genero`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+DROP TABLE IF EXISTS `jornada`;
+CREATE TABLE IF NOT EXISTS `jornada` (
+  `id_jornada` int(11) NOT NULL AUTO_INCREMENT,
+  `jornada` varchar(15) COLLATE utf8_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id_jornada`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+DROP TABLE IF EXISTS `novedad`;
+CREATE TABLE IF NOT EXISTS `novedad` (
+  `id_novedad` int(11) NOT NULL AUTO_INCREMENT,
+  `id_aprendiz` int(10) NOT NULL,
+  `fecha` date DEFAULT NULL,
+  `id_tipo_novedad` int(20) DEFAULT NULL,
+  `ficha_ingresar` varchar(25) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `motivo` varchar(250) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `descripcion` varchar(250) COLLATE utf8_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id_novedad`),
+  KEY `id_tipo_novedad` (`id_tipo_novedad`),
+  KEY `novedad_ibfk_1` (`id_aprendiz`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+DROP TABLE IF EXISTS `programa_formacion`;
+CREATE TABLE IF NOT EXISTS `programa_formacion` (
+  `id_programa` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre_programa` varchar(45) DEFAULT '000000',
+  PRIMARY KEY (`id_programa`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `resultados_aprendizaje`;
+CREATE TABLE IF NOT EXISTS `resultados_aprendizaje` (
+  `id_resultado` int(11) NOT NULL AUTO_INCREMENT,
+  `resultado` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `resultado_aprendizaje` varchar(500) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`id_resultado`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+DROP TABLE IF EXISTS `tipo_documento`;
+CREATE TABLE IF NOT EXISTS `tipo_documento` (
+  `id_tipo_documento` int(15) NOT NULL AUTO_INCREMENT,
+  `tipo_documento` char(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id_tipo_documento`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+DROP TABLE IF EXISTS `tipo_formacion`;
+CREATE TABLE IF NOT EXISTS `tipo_formacion` (
+  `id_tipo_formacion` int(12) NOT NULL AUTO_INCREMENT,
+  `tipo_formacion` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id_tipo_formacion`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+DROP TABLE IF EXISTS `tipo_novedad`;
+CREATE TABLE IF NOT EXISTS `tipo_novedad` (
+  `id_tipo_novedad` int(20) NOT NULL AUTO_INCREMENT,
+  `novedad` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id_tipo_novedad`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+DROP TABLE IF EXISTS `trimestre`;
+CREATE TABLE IF NOT EXISTS `trimestre` (
+  `id_trimestre` int(12) NOT NULL AUTO_INCREMENT,
+  `trimestre` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id_trimestre`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id_usuario` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre_usuario` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `primer_nombre` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `segundo_nombre` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `primer_apellido` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `segundo_apellido` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `id_tipo_documento` int(10) NOT NULL DEFAULT '1',
+  `documento` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `id_cargo` int(20) DEFAULT NULL,
+  `correo` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `direccion` varchar(150) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `contrasena` varchar(250) COLLATE utf8_spanish_ci NOT NULL,
+  `cel_usuario` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `tel_usuario` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `id_genero` int(20) DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`),
+  UNIQUE KEY `id_cargo` (`id_cargo`),
+  KEY `id_genero` (`id_genero`),
+  KEY `id_tipo_documento` (`id_tipo_documento`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+
+//======================================================================================
+Sentencias ALTER
+//======================================================================================
+
+ALTER TABLE `aprendiz`
+  ADD CONSTRAINT `aprendiz_ibfk_1` FOREIGN KEY (`id_ficha`) REFERENCES `ficha` (`id_ficha`),
+  ADD CONSTRAINT `aprendiz_ibfk_2` FOREIGN KEY (`id_genero`) REFERENCES `genero` (`id_genero`),
+  ADD CONSTRAINT `aprendiz_ibfk_3` FOREIGN KEY (`id_tipo_documento`) REFERENCES `tipo_documento` (`id_tipo_documento`),
+  ADD CONSTRAINT `aprendiz_ibfk_4` FOREIGN KEY (`id_resultado`) REFERENCES `resultados_aprendizaje` (`id_resultado`);
+
+
+ALTER TABLE `ficha`
+  ADD CONSTRAINT `ficha_ibfk_1` FOREIGN KEY (`id_programa`) REFERENCES `programa_formacion` (`id_programa`),
+  ADD CONSTRAINT `ficha_ibfk_2` FOREIGN KEY (`id_trimestre`) REFERENCES `trimestre` (`id_trimestre`),
+  ADD CONSTRAINT `ficha_ibfk_3` FOREIGN KEY (`id_jornada`) REFERENCES `jornada` (`id_jornada`),
+  ADD CONSTRAINT `ficha_ibfk_4` FOREIGN KEY (`id_etapa`) REFERENCES `etapa` (`id_etapa`),
+  ADD CONSTRAINT `ficha_ibfk_5` FOREIGN KEY (`id_tipo_formacion`) REFERENCES `tipo_formacion` (`id_tipo_formacion`);
+
+
+ALTER TABLE `novedad`
+  ADD CONSTRAINT `novedad_ibfk_1` FOREIGN KEY (`id_aprendiz`) REFERENCES `aprendiz` (`id_aprendiz`),
+  ADD CONSTRAINT `novedad_ibfk_2` FOREIGN KEY (`id_tipo_novedad`) REFERENCES `tipo_novedad` (`id_tipo_novedad`);
+
+
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`id_genero`) REFERENCES `genero` (`id_genero`),
+  ADD CONSTRAINT `usuario_ibfk_2` FOREIGN KEY (`id_cargo`) REFERENCES `cargo` (`id_cargo`),
+  ADD CONSTRAINT `usuario_ibfk_3` FOREIGN KEY (`id_tipo_documento`) REFERENCES `tipo_documento` (`id_tipo_documento`);
+COMMIT;
+

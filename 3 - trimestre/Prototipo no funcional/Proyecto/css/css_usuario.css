@@ -1,0 +1,222 @@
+body{
+	margin:0;
+    padding: 0;
+	background-image:url(img/fondo.jpeg);
+	background-position:center;
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+
+/*el cuadro del formulario*/
+.login-box{
+    width: 900px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    top: 80%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding:10px 20px;
+	border-radius:25px;
+	
+}
+
+.login-box-else{
+    width: 900px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding:10px 20px;
+    border-radius:25px;
+    
+}
+
+/*la imagen de la parte de arriba del formulario */
+.avatar{
+	width:200px;
+    height: 200px;
+    border-radius: 50%;
+    position:inherit;
+	top:-10px;
+	left:-350px;
+}
+
+
+/*h1 iniciar sesion*/
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+	text-align:center;
+    font-size: 35px;
+}
+h2,h3,h4{
+	text-align:center;
+	
+}
+
+.form-area select{
+    margin-top:20px;
+    padding:10px 0;
+}
+.form-area input,textarea,select{
+    margin-bottom:20px;
+    width:100%;
+}
+/*dist userpass negrits*/
+.login-box p,
+.login-box-else p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+/*cuadrop tex ylogin*/
+.login-box input,
+.login-box-else input{
+    width: 30%;
+    margin-bottom: 20px;
+}
+/*transparencia de los cuadrops de texto y linea blanca, color de la letra, tamañoo */
+.login-box input[type="text"], input[type="password"],
+.login-box-else input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    width: 250px;
+}
+/*boton redondeado y el color */
+.submit,
+.login-box input[type="submit"],.login-box input[type="button"],
+.login-box-else input[type="submit"],.login-box-else input[type="button"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #1c8adb;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+	cursor:pointer;
+}
+.login-box a:hover,
+.login-box-else a:hover
+{
+    color: #39dc79;
+}
+
+div.footer{
+	width:100%;
+	height:100px;
+	background-color:#F00;
+}
+.nom{
+	width:300px;
+	background-color:rgba(0,0,0,0.5);
+	text-align:center;
+	border-radius:5px;
+	
+}
+
+h2{
+    margin:0;
+    padding:0 0 20px;
+    font-weight:bold;
+    color:#ffffff;
+    text-align:center;
+}
+
+
+.fin{
+    text-align:center;
+    color:#FFF;
+}
+
+.textarea{
+    resize:none;
+}
+
+.form-area p{
+    margin:0;
+    padding:0;
+    font-weight:bold;
+    color:#ffffff;
+}
+
+.form-area input,textarea,select{
+    margin-bottom:20px;
+    width:100%;
+}
+
+.form-area input[type=submit],
+.form-area input[type=reset]{
+    margin-bottom:20px;
+    width:49%;
+}
+.form-area input[type=text],
+.form-area textarea[name=solicitud]{
+    border:none;
+    border-bottom:1px solid #ffffff;
+    background-color:transparent;
+    outline:none;
+    height:40px;
+    color:#ffffff;
+    display:16px;
+    resize:none;
+    
+}
+
+.form-area select{
+    margin-top:20px;
+    padding:10px 0;
+}
+
+.form-area input[type=submit],
+.form-area input[type=reset]{
+    border:none;
+    height:40px;
+    outline:none;
+    color:#ffffff;
+    font-size:15px;
+    background-color:#06F;
+    cursor:pointer;
+    border-radius:20px;
+}
+
+.form-area input[type=submit]:hover{
+    color:#ffffff;
+}
+
+.form-area a{
+    color:#ffffff;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.selec{
+    
+    width:100%;
+    padding:5.5px;
+    background:rgba(0,0,0,0.0);
+    border: 2px solid rgba(0,0,0,0.0);
+
+    font-size:20px;
+
+}
+
+.form-area a{
+    color:#ffffff;
+    text-decoration:none;
+    font-size:14px;
+}

@@ -1,0 +1,103 @@
+body{
+	margin:0;
+	padding:0;
+	background-image:url(img/fondo.jpeg);
+	background-position:center;
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	-webkit-background-size:cover;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+
+.form-area{
+	position:absolute;
+	top:66%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	width:550px;
+	height:1130px;
+	box-sizing:border-box;
+	background:rgba(0,0,0,0.8);
+	padding:40px;
+	border-radius:10px;
+	margin-bottom:30px;
+}
+h2{
+	margin:0;
+	padding:0 0 20px;
+	font-weight:bold;
+	color:#ffffff;
+	text-align:center;
+}
+
+
+.fin{
+	text-align:center;
+	color:#FFF;
+}
+
+.textarea{
+	resize:none;
+}
+
+.form-area p{
+	margin:0;
+	padding:0;
+	font-weight:bold;
+	color:#ffffff;
+}
+
+.form-area input,textarea,select{
+	margin-bottom:20px;
+	width:100%;
+}
+
+.form-area input[type=submit],
+.form-area input[type=reset]{
+	margin-bottom:20px;
+	width:32%;
+}
+
+.form-area input[type=text],
+.form-area textarea[name=solicitud]{
+	border:none;
+	border-bottom:1px solid #ffffff;
+	background-color:transparent;
+	outline:none;
+	height:40px;
+	color:#ffffff;
+	display:16px;
+	resize:none;
+	
+}
+::placeholder{
+	color:#ffffff;
+}
+
+.form-area select{
+	margin-top:20px;
+	padding:10px 0;
+}
+
+.form-area input[type=submit],
+.form-area input[type=reset]{
+	border:none;
+	height:40px;
+	outline:none;
+	color:#ffffff;
+	font-size:15px;
+	background-color:#06F;
+	cursor:pointer;
+	border-radius:20px;
+}
+
+.form-area input[type=submit]:hover{
+	color:#ffffff;
+}
+
+.form-area a{
+	color:#ffffff;
+	text-decoration:none;
+	font-size:14px;
+}

@@ -1,0 +1,2 @@
+DirectoryIndex proyecto/index.php
+ErrorDocument 404 localhost:8082/
